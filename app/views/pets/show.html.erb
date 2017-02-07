@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1 class="text-center"><%= @pet.name %></h1>
+      <p><%= @pet.species %></p>
+      <p>Found on <%= @pet.found_on.strftime("%b %d, %Y") %></p>
+      <p><%= @pet.alive ? "Alive :)" : "Dead :(" %></p>
+      <%= link_to "Edit", edit_pet_path(@pet) %> <%= link_to "Back", pets_path %> <%= link_to "Delete", pet_path(@pet), method: :delete, data: { confirm: "Are you sure" } %>
+    </div>
+  </div>
+</div>

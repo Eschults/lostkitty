@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <h1>Lost pets</h1>
+    <p><%= link_to "Found a pet?", new_pet_path %></p>
+    <% @pets.each do |pet| %>
+      <div class="col-sm-4">
+        <h3><%= link_to pet.name, pet_path(pet) %></h3>
+        <p><%= pet.species %></p>
+        <p>Found on <%= pet.found_on.strftime("%b %d, %Y") %></p>
+        <p><%= pet.alive ? "Alive :)" : "Dead :(" %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

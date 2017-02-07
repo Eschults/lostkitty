@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= simple_form_for @pet do |f| %>
+        <%= f.input :name %>
+        <%= f.input :species, collection: Pet::SPECIES %>
+        <%= f.input :found_on, as: :string, input_html: { class: "datepicker" } %>
+        <%= f.input :alive %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
